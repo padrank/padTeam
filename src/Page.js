@@ -13,7 +13,8 @@ export default function Page(){
     'selfId': undefined,
     'selfData': {
       super_awoken: [],
-      awoken: []
+      awoken: [],
+      type: []
     },
     'selfConfig': {
       awokenNum: 0,
@@ -21,7 +22,10 @@ export default function Page(){
     },
     'selfSelected': false,
     'inheritId': undefined,
-    'inheritData': undefined,
+    'inheritData': {
+      super_awoken: [],
+      awoken: []
+    },
     'inheritSelected': false,
   }));
 

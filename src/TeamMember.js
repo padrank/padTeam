@@ -17,6 +17,25 @@ const useStyles = makeStyles((theme) => ({
   root: {
     transition: '0.2s',
   },
+  noAndLv: {
+    textAlign: 'center',
+    fontSize: 6,
+    marginBottom: 3,
+    // transform: 'scale(0.8)',
+    '& > *': {
+      paddingRight: 3,
+    }
+  },
+  inheritNoAndLv: {
+    textAlign: 'center',
+    fontSize: 6,
+    marginBottom: 3,
+    transform: 'scale(0.6)',
+    '& > *': {
+      paddingLeft: 3,
+      paddingRight: 3,
+    }
+  },
   selfImgSelectedMask: {
     position: "absolute",
     width: 90,
@@ -174,14 +193,46 @@ export default function TeamMember(props) {
 
   }
 
+  const handleSelfLvChange = (e) => {
+    let tmp = parseInt("0" + e.target.value);
+    if (props.data.selfData.attack_110 === 0) {
+      tmp = tmp > 99 ? 99 : tmp;
+    }
+    else {
+      tmp = tmp > 110 ? 110 : tmp;
+    }
+
+    tmp = tmp < 1 ? 1 : tmp;
+
+    setSelfLv(tmp);
+  }
+
+  const handleInheritLvChange = (e) => {
+    let tmp = parseInt("0" + e.target.value);
+    if (props.data.inheritData.attack_110 === 0) {
+      tmp = tmp > 99 ? 99 : tmp;
+    }
+    else {
+      tmp = tmp > 110 ? 110 : tmp;
+    }
+
+    tmp = tmp < 1 ? 1 : tmp;
+
+    setInheritLv(tmp);
+  }
+
   // const [showSuperAwoken, setShowSuperAwoken] = React.useState(false);
   // const [superAwoken, setSuperAwoken] = React.useState({
   //   selected: 'unknown',
   //   candidates: ['unknown'],
   // });
   const [superAwokenDialogOpen, setSuperAwokenDialogOpen] = React.useState(false);
+  const [selfLvDialogOpen, setSelfLvDialogOpen] = React.useState(false);
+  const [inheritLvDialogOpen, setInheritLvDialogOpen] = React.useState(false);
   const [awokenDialogOpen, setAwokenDialogOpen] = React.useState(false);
   const [awokenValue, setAwokenValue] = React.useState([]);
+  const [selfLv, setSelfLv] = React.useState(0);
+  const [inheritLv, setInheritLv] = React.useState(0);
 
   const [, dropSelf] = useDrop({
     accept: Config.dragAndDropType,
@@ -214,9 +265,20 @@ export default function TeamMember(props) {
     setAwokenValue([...Array(props.data.selfConfig.awokenNum).keys()]);
   }, [props.data.selfConfig])
 
+  useEffect(() =>{
+    setSelfLv( props.data.selfData.attack_110 === 0 ? 99 : 110 );
+  }, [props.data.selfData.attack_110])
+
+  useEffect(() =>{
+    setInheritLv( props.data.inheritData.attack_110 === 0 ? 99 : 110 );
+  }, [props.data.inheritData.attack_110])
+
   return(
     <span className={classes.root}>
-      <Typography variant="caption" display="block">No.{props.data.selfId}</Typography>
+      <div className={classes.noAndLv} style={{ visibility: props.data.selfId === undefined ? 'hidden' : 'visible'}}>
+        <span>No.{props.data.selfId}</span>
+        <span onClick={() => setSelfLvDialogOpen(true)}>Lv.{selfLv}</span>
+      </div>
       <AwokenBadge invisible={props.data.selfData.awoken.length === 0} badgeContent={
         <React.Fragment>
           {
@@ -247,7 +309,11 @@ export default function TeamMember(props) {
                   }
                 </ButtonBase>
               </InheritPlusBadge>
-              <Typography variant="caption" display="block">No.{props.data.inheritId}</Typography>
+              <div className={classes.inheritNoAndLv} style={{ visibility: props.data.inheritId === undefined ? 'hidden' : 'visible'}}>
+                <span>No.{props.data.inheritId}</span>
+                <span onClick={() => setInheritLvDialogOpen(true)}>Lv.{inheritLv}</span>
+              </div>
+              {/* <Typography variant="caption" display="block">No.{props.data.inheritId}</Typography> */}
             </React.Fragment>
           } anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}>
             <ButtonBase onClick={handleSelfImgClick}>
@@ -298,7 +364,7 @@ export default function TeamMember(props) {
         </DialogActions>
       </Dialog>
 
-      {/* Awoken */}
+      {/* Awoken Dialog */}
       <Dialog
         open={awokenDialogOpen}
         onClose={() => setAwokenDialogOpen(false)}
@@ -333,7 +399,66 @@ export default function TeamMember(props) {
         </DialogActions>
       </Dialog>
 
-      <PotentialAwoken />
+      {/* self Lv dialog */}
+      <Dialog
+        open={selfLvDialogOpen}
+        onClose={() => setSelfLvDialogOpen(false)}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle id="alert-dialog-title">{"Self level"}</DialogTitle>
+        <DialogContent>
+          <div>
+            <TextField
+              label="LV"
+              type="Number"
+              className={classes.textField}
+              InputProps={{
+                startAdornment: <InputAdornment position="start">Lv. </InputAdornment>,
+              }}
+              value={selfLv}
+              variant="outlined"
+              onChange={handleSelfLvChange}
+            />
+          </div>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={() => setSelfLvDialogOpen(false)} color="primary" autoFocus>
+            OK
+          </Button>
+        </DialogActions>
+      </Dialog>
+
+      {/* inherit Lv dialog */}
+      <Dialog
+        open={inheritLvDialogOpen}
+        onClose={() => setInheritLvDialogOpen(false)}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle id="alert-dialog-title">{"Inherit level"}</DialogTitle>
+        <DialogContent>
+          <div>
+            <TextField
+              label="LV"
+              type="Number"
+              className={classes.textField}
+              InputProps={{
+                startAdornment: <InputAdornment position="start">Lv. </InputAdornment>,
+              }}
+              value={inheritLv}
+              variant="outlined"
+              onChange={handleInheritLvChange}
+            />
+          </div>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={() => setInheritLvDialogOpen(false)} color="primary" autoFocus>
+            OK
+          </Button>
+        </DialogActions>
+      </Dialog>
+      <PotentialAwoken data={props.data}/>
     </span>
   )
 }

@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import imgPath from './data/imgPath.json';
 import { Config } from './Config';
-import { Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions, Button, Paper, ButtonBase } from '@material-ui/core';
+import { Dialog, DialogTitle, DialogContent, DialogActions, Button, Paper, ButtonBase } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -42,7 +42,13 @@ const useStyles = makeStyles((theme) => ({
     dialogCandidatesContainer: {
       textAlign: 'center',
       padding: 10
-    }
+    },
+    opacity3 :{
+      opacity: 0.3,
+    },
+    opacity10 :{
+      opacity: 1,
+    },
   })
 );
 
@@ -52,6 +58,7 @@ export default function PotentialAwoken(props) {
 
   const [potentialAwokens, setPotentialAwokens] = React.useState([]);
   const [potentialAwokenDialogOpen, setPotentialAwokenDialogOpen] = React.useState(false);
+  const [potentialAwokensAbility, setPotentialAwokensAbility] = React.useState({});
 
   const addPotentialAwoken = (e) => {
     let currentSum = 0;
@@ -74,6 +81,64 @@ export default function PotentialAwoken(props) {
       setPotentialAwokens(tmp);
     }
   }
+
+  useEffect(() =>{
+    const checkPotentialAwokenAvaliable = (pa) => {
+      if (pa === '神キラー') {
+        return props.data.selfData.type.includes('平衡') || props.data.selfData.type.includes('惡魔') || props.data.selfData.type.includes('機械');
+      }
+      else if (pa === 'ドラゴンキラー') {
+        return props.data.selfData.type.includes('平衡') || props.data.selfData.type.includes('回復');
+      }
+      else if (pa === '悪魔キラー') {
+        return props.data.selfData.type.includes('平衡') || props.data.selfData.type.includes('神') || props.data.selfData.type.includes('攻擊');
+      }
+      else if (pa === 'マシンキラー') {
+        return props.data.selfData.type.includes('平衡') || props.data.selfData.type.includes('體力') || props.data.selfData.type.includes('龍');
+      }
+      else if (pa === 'バランスキラー') {
+        return props.data.selfData.type.includes('平衡') || props.data.selfData.type.includes('機械');
+      }
+      else if (pa === '攻撃キラー') {
+        return props.data.selfData.type.includes('平衡') || props.data.selfData.type.includes('回復');
+      }
+      else if (pa === '体力キラー') {
+        return props.data.selfData.type.includes('平衡') || props.data.selfData.type.includes('攻擊');
+      }
+      else if (pa === '回復キラー') {
+        return props.data.selfData.type.includes('平衡') || props.data.selfData.type.includes('體力') || props.data.selfData.type.includes('龍');
+      }
+      else if (pa === 'ダメージ吸収貫通'){
+        return props.data.selfData.awoken.includes('コンボドロップ生成') || (props.data.selfConfig.superAwoken === 'コンボドロップ生成') || (props.data.inheritData.awoken[0] === '覚醒アシスト' && props.data.inheritData.awoken.includes('コンボドロップ生成'));
+      }
+      else if (pa === '消せないドロップ回復'){
+        return props.data.selfData.awoken.includes('2体攻撃') || (props.data.selfConfig.superAwoken === '2体攻撃') || (props.data.inheritData.awoken[0] === '覚醒アシスト' && props.data.inheritData.awoken.includes('2体攻撃'));
+      }
+      else if (pa === 'ルーレット回復'){
+        return props.data.selfData.awoken.includes('バインド回復') || (props.data.selfConfig.superAwoken === 'バインド回復') || (props.data.inheritData.awoken[0] === '覚醒アシスト' && props.data.inheritData.awoken.includes('バインド回復'));
+      }
+      else {
+        return true;
+      }
+    }
+
+
+
+    let tmp = {};
+    if (props.data.selfId === undefined) {
+      Object.keys(imgPath.potential).map((pa) => {
+        tmp[pa] = false;
+      })
+    }
+    else {
+      Object.keys(imgPath.potential).map((pa) => {
+        tmp[pa] = checkPotentialAwokenAvaliable(pa);
+      })
+    }
+
+    setPotentialAwokensAbility(tmp);
+    console.log(tmp)
+  }, [props.data])
 
   return (
     <div>
@@ -129,8 +194,8 @@ export default function PotentialAwoken(props) {
             {
               Object.keys(imgPath.potential).map((pa) => {
                 return (
-                  <ButtonBase style={{margin: 2}} onClick={addPotentialAwoken} value={pa}>
-                    <img src={imgPath.potential[pa]} alt="" width={Config.potentialAwokenLength[pa] * 25} height={25}/>
+                  <ButtonBase style={{margin: 2}} onClick={addPotentialAwoken} value={pa} disabled={!potentialAwokensAbility[pa]}>
+                    <img src={imgPath.potential[pa]} alt="" width={Config.potentialAwokenLength[pa] * 25} height={25} className={potentialAwokensAbility[pa] ? classes.opacity10 : classes.opacity3}/>
                   </ButtonBase>
                 )
               })

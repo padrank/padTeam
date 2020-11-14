@@ -72,13 +72,13 @@
         "毒ドロップの加護": "images/awoken/k72.png",
         "スキルボイス": "images/awoken/k80.png",
         "ダンジョンボーナス": "images/awoken/k81.png",
-        "コンボドロップ": "images/awoken/k82.png",
+        "コンボドロップ生成": "images/awoken/k82.png",
         "HP弱化": "images/awoken/k83.png",
         "攻撃弱化": "images/awoken/k84.png",
         "回復弱化": "images/awoken/k85.png",
         "覚醒アシスト": "images/awoken/assist.png",
         "unknown": "images/awoken/unknown.png"
-        }
+    }
     ,
     "type": {
         "攻擊": "images/type/attack.png",

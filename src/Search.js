@@ -18,6 +18,7 @@ import data from './data/datas.json';
 import SearchResult from './SearchResult';
 import AdvancedSearchPanel from './AdvancedSearchPanel';
 import { Badge } from '@material-ui/core';
+import { Config } from './Config';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -57,26 +58,6 @@ export default function Search(props) {
   const [open, setOpen] = React.useState(false);
   const [badgeVisible, setBadgeVisible] = React.useState(false);
 
-  const chiToEng = {"火": "fire", "水": "water", "木": "wood", "光": "light", "暗": "dark", "無": "none",
-  "神": "god", "龍": "dragon", "惡魔": "demon", "機械": "machine", "平衡": "balance",
-  "攻擊": "attack", "體力": "strength", "回復": "healing", "進化用": "evo", "覺醒用": "aw", "強化用": "power",
-  "HP強化": "k1", "攻撃強化": "k2", "回復強化": "k3", "火ダメージ軽減": "k4", "水ダメージ軽減": "k5",
-  "木ダメージ軽減": "k6", "光ダメージ軽減": "k7", "闇ダメージ軽減": "k8", "自動回復": "k9", "バインド耐性": "k10",
-  "暗闇耐性": "k11", "お邪魔耐性": "k12", "毒耐性": "k13", "火ドロップ強化": "k14", "水ドロップ強化": "k15",
-  "木ドロップ強化": "k16", "光ドロップ強化": "k17", "闇ドロップ強化": "k18", "操作時間延長": "k19", "バインド回復": "k20",
-  "スキルブースト": "k21", "火属性強化": "k22", "水属性強化": "k23", "木属性強化": "k24", "光属性強化": "k25",
-  "闇属性強化": "k26", "2体攻撃": "k27", "封印耐性": "k28", "回復ドロップ強化": "k29", "マルチブースト": "k30",
-  "ドラゴンキラー": "k31", "神キラー": "k32", "悪魔キラー": "k33", "マシンキラー": "k34", "バランスキラー": "k35",
-  "攻撃キラー": "k36", "体力キラー": "k37", "回復キラー": "k38", "進化用キラー": "k39", "能力覚醒用キラー": "k40",
-  "強化合成用キラー": "k41", "売却用キラー": "k42", "コンボ強化": "k43", "ガードブレイク": "k44", "追加攻撃": "k46",
-  "チームHP強化": "k47", "チーム回復強化": "k48", "ダメージ無効貫通": "k49", "超追加攻撃": "k50", "スキルチャージ": "k51",
-  "バインド耐性＋": "k52", "操作時間延長＋": "k53", "雲耐性": "k54", "操作不可耐性": "k55", "スキルブースト＋": "k56",
-  "HP80％以上強化": "k57", "HP50％以下強化": "k58", "回復L字消し": "k59", "L字消し攻撃": "k60", "超コンボ強化": "k61",
-  "暗闇耐性＋": "k68", "お邪魔耐性＋": "k69", "毒耐性＋": "k70", "お邪魔ドロップの加護": "k71", "毒ドロップの加護": "k72",
-  "スキルボイス": "k80", "ダンジョンボーナス": "k81", "コンボドロップ": "k82", "HP弱化": "k83", "攻撃弱化": "k84",
-  "回復弱化": "k85", "覚醒アシスト": "assist"};
-  const engToChi = {"fire": "火", "water": "水", "wood": "木", "light": "光", "dark": "暗", "none": "無"};
-
   const handleAdvancedSearchClick = () => {
     setOpen(!open);
   };
@@ -99,13 +80,13 @@ export default function Search(props) {
         if (advancedSearchFilter !== undefined) {
           // main property
           if (advancedSearchFilter.mainProperty.length !== 0){
-            if (!advancedSearchFilter.mainProperty.includes(chiToEng[d.main_property.trim()])){
+            if (!advancedSearchFilter.mainProperty.includes(Config.chiToEng[d.main_property.trim()])){
               return
             }
           }
           // sub property
           if (advancedSearchFilter.subProperty.length !== 0){
-            if (!advancedSearchFilter.subProperty.includes(chiToEng[d.sub_property.trim()])){
+            if (!advancedSearchFilter.subProperty.includes(Config.chiToEng[d.sub_property.trim()])){
               return
             }
           }
@@ -113,7 +94,7 @@ export default function Search(props) {
           if (advancedSearchFilter.type.length !== 0){
             let flag = false;
             d.type.forEach(t => {
-              if (advancedSearchFilter.type.includes(chiToEng[t.trim()])){
+              if (advancedSearchFilter.type.includes(Config.chiToEng[t.trim()])){
                 flag = true;
                 return
               }
@@ -127,11 +108,11 @@ export default function Search(props) {
             let tmp = {};
             let flag = true;
             d.awoken.forEach(t => {
-              tmp[chiToEng[t]] = (tmp[chiToEng[t]] === undefined) ? 1 : tmp[chiToEng[t]] + 1;
+              tmp[Config.chiToEng[t]] = (tmp[Config.chiToEng[t]] === undefined) ? 1 : tmp[Config.chiToEng[t]] + 1;
             });
             if (advancedSearchFilter.superAwoken) {
               d.super_awoken.forEach(t => {
-                tmp[chiToEng[t]] = (tmp[chiToEng[t]] === undefined) ? 1 : tmp[chiToEng[t]] + 1;
+                tmp[Config.chiToEng[t]] = (tmp[Config.chiToEng[t]] === undefined) ? 1 : tmp[Config.chiToEng[t]] + 1;
               });
             }
             advancedSearchFilter.awoken.forEach(a => {
@@ -170,6 +151,10 @@ export default function Search(props) {
       if (t.selfSelected) {
         tmp['selfId'] = id;
         tmp['selfData'] = d;
+        tmp['selfConfig'] = {
+          'awokenNum': d.awoken.length,
+          'superAwoken': 'unknown'
+        }
         tmp['selfSelected'] = false;
       }
       if (t.inheritSelected) {
