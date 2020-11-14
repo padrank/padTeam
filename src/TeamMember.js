@@ -18,7 +18,6 @@ const useStyles = makeStyles((theme) => ({
     transition: '0.2s',
   },
   noAndLv: {
-    textAlign: 'center',
     fontSize: 6,
     marginBottom: 3,
     // transform: 'scale(0.8)',
@@ -282,7 +281,7 @@ export default function TeamMember(props) {
       <AwokenBadge invisible={props.data.selfData.awoken.length === 0} badgeContent={
         <React.Fragment>
           {
-            (awokenValue.length === props.data.selfData.awoken.length && awokenValue.length !== 0)
+            (awokenValue.length >= props.data.selfData.awoken.length && awokenValue.length !== 0)
               ? <StarIcon style={{ color: "#feff04" }} fontSize={"inherit"} onClick={() => setAwokenDialogOpen(true)}/>
               : <span style={{ color: "#feff04", fontWeight: 900 }} onClick={() => setAwokenDialogOpen(true)}>{awokenValue.length}</span>
           }

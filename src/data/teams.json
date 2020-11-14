@@ -1,0 +1,486 @@
+{
+    "魔廊の支配者【同キャラ禁止】":[
+        {
+            "team": [
+                {
+                    "selfId": 6531,
+                    "selfConfig": {
+                        "awokenNum": 999,
+                        "superAwoken": "unknown",
+                        "lv": 99,
+                        "potentialAwokens": [
+                            "スキル遲延耐性",
+                            "スキル遲延耐性",
+                            "スキル遲延耐性",
+                            "スキル遲延耐性",
+                            "スキル遲延耐性",
+                            "スキル遲延耐性"
+                        ],
+                        "plus": {
+                            "hp": 99,
+                            "attack": 99,
+                            "heal": 99
+                        }
+                    },
+                    "inheritId": 5065,
+                    "inheritConfig": {
+                        "lv": 99,
+                        "plus": {
+                            "hp": 99,
+                            "attack": 99,
+                            "heal": 99
+                        }
+                    }
+                },
+                {
+                    "selfId": 6353,
+                    "selfConfig": {
+                        "awokenNum": 999,
+                        "superAwoken": "スキルブースト＋",
+                        "lv": 110,
+                        "potentialAwokens": [
+                            "毒目覚め耐性",
+                            "スキル遲延耐性",
+                            "スキル遲延耐性"
+                        ],
+                        "plus": {
+                            "hp": 99,
+                            "attack": 99,
+                            "heal": 99
+                        }
+                    },
+                    "inheritId": 6154,
+                    "inheritConfig": {
+                        "lv": 99,
+                        "plus": {
+                            "hp": 99,
+                            "attack": 99,
+                            "heal": 99
+                        }
+                    }
+                },
+                {
+                    "selfId": 6395,
+                    "selfConfig": {
+                        "awokenNum": 999,
+                        "superAwoken": "unknown",
+                        "lv": 99,
+                        "potentialAwokens": [
+                            "スキル遲延耐性",
+                            "スキル遲延耐性",
+                            "スキル遲延耐性",
+                            "スキル遲延耐性",
+                            "スキル遲延耐性",
+                            "スキル遲延耐性"
+                        ],
+                        "plus": {
+                            "hp": 99,
+                            "attack": 99,
+                            "heal": 99
+                        }
+                    },
+                    "inheritId": 6556,
+                    "inheritConfig": {
+                        "lv": 99,
+                        "plus": {
+                            "hp": 99,
+                            "attack": 99,
+                            "heal": 99
+                        }
+                    }
+                },
+                {
+                    "selfId": 6540,
+                    "selfConfig": {
+                        "awokenNum": 999,
+                        "superAwoken": "unknown",
+                        "lv": 99,
+                        "potentialAwokens": [
+                            "スキル遲延耐性",
+                            "スキル遲延耐性",
+                            "スキル遲延耐性",
+                            "スキル遲延耐性",
+                            "スキル遲延耐性",
+                            "スキル遲延耐性"
+                        ],
+                        "plus": {
+                            "hp": 99,
+                            "attack": 99,
+                            "heal": 99
+                        }
+                    },
+                    "inheritId": 5875
+                },
+                {
+                    "selfId": 6557,
+                    "selfConfig": {
+                        "awokenNum": 999,
+                        "superAwoken": "バインド耐性＋",
+                        "lv": 99,
+                        "potentialAwokens": [
+                            "スキル遲延耐性",
+                            "スキル遲延耐性",
+                            "スキル遲延耐性",
+                            "スキル遲延耐性",
+                            "スキル遲延耐性",
+                            "水ダメージ軽減"
+                        ],
+                        "plus": {
+                            "hp": 99,
+                            "attack": 99,
+                            "heal": 99
+                        }
+                    },
+                    "inheritId": 6532
+                },
+                {
+                    "selfId": 6531,
+                    "selfConfig": {
+                        "awokenNum": 999,
+                        "superAwoken": "unknown",
+                        "lv": 99,
+                        "potentialAwokens": [
+                            "スキル遲延耐性",
+                            "スキル遲延耐性",
+                            "スキル遲延耐性",
+                            "スキル遲延耐性",
+                            "スキル遲延耐性",
+                            "スキル遲延耐性"
+                        ],
+                        "plus": {
+                            "hp": 99,
+                            "attack": 99,
+                            "heal": 99
+                        }
+                    },
+                    "inheritId": 5065,
+                    "inheritConfig": {
+                        "lv": 99,
+                        "plus": {
+                            "hp": 99,
+                            "attack": 99,
+                            "heal": 99
+                        }
+                    }
+                }
+            ],
+            "reference": "https://www.youtube.com/watch?v=hyMJaYNL4Rg"
+        },
+        {
+            "team": [
+                {
+                    "selfId": 6162,
+                    "selfConfig": {
+                        "awokenNum": 999,
+                        "superAwoken": "コンボ強化",
+                        "lv": 110,
+                        "potentialAwokens": [
+                            "リーダーチェンジ耐性"
+                        ],
+                        "plus": {
+                            "hp": 99,
+                            "attack": 99,
+                            "heal": 99
+                        }
+                    },
+                    "inheritId": 6285,
+                    "inheritConfig": {
+                        "lv": 99,
+                        "plus": {
+                            "hp": 99,
+                            "attack": 99,
+                            "heal": 99
+                        }
+                    }
+                },
+                {
+                    "selfId": 6356,
+                    "selfConfig": {
+                        "awokenNum": 999,
+                        "superAwoken": "スキルブースト＋",
+                        "lv": 110,
+                        "potentialAwokens": [
+                            "毒目覚め耐性",
+                            "スキル遲延耐性",
+                            "スキル遲延耐性"
+                        ],
+                        "plus": {
+                            "hp": 99,
+                            "attack": 99,
+                            "heal": 99
+                        }
+                    },
+                    "inheritId": 5789,
+                    "inheritConfig": {
+                        "lv": 99,
+                        "plus": {
+                            "hp": 99,
+                            "attack": 99,
+                            "heal": 99
+                        }
+                    }
+                },
+                {
+                    "selfId": 6201,
+                    "selfConfig": {
+                        "awokenNum": 999,
+                        "superAwoken": "unknown",
+                        "lv": 99,
+                        "potentialAwokens": [
+                            "悪魔キラー",
+                            "スキル遲延耐性",
+                            "スキル遲延耐性"
+                        ],
+                        "plus": {
+                            "hp": 99,
+                            "attack": 99,
+                            "heal": 99
+                        }
+                    },
+                    "inheritId": 5875
+                },
+                {
+                    "selfId": 3391,
+                    "selfConfig": {
+                        "awokenNum": 999,
+                        "superAwoken": "操作不可耐性",
+                        "lv": 110,
+                        "potentialAwokens": [
+                            "木ダメージ軽減",
+                            "木ダメージ軽減＋",
+                            "スキル遲延耐性",
+                            "スキル遲延耐性",
+                            "スキル遲延耐性"
+                        ],
+                        "plus": {
+                            "hp": 99,
+                            "attack": 99,
+                            "heal": 99
+                        }
+                    },
+                    "inheritId": 6524,
+                    "inheritConfig": {
+                        "lv": 99,
+                        "plus": {
+                            "hp": 99,
+                            "attack": 99,
+                            "heal": 99
+                        }
+                    }
+                },
+                {
+                    "selfId": 6156,
+                    "selfConfig": {
+                        "awokenNum": 999,
+                        "superAwoken": "unknown",
+                        "lv": 99,
+                        "potentialAwokens": [
+                            "スキル遲延耐性",
+                            "スキル遲延耐性",
+                            "スキル遲延耐性",
+                            "スキル遲延耐性",
+                            "悪魔キラー"
+                        ],
+                        "plus": {
+                            "hp": 99,
+                            "attack": 99,
+                            "heal": 99
+                        }
+                    },
+                    "inheritId": 5259
+                },
+                {
+                    "selfId": 6156,
+                    "selfConfig": {
+                        "awokenNum": 999,
+                        "superAwoken": "unknown",
+                        "lv": 99,
+                        "potentialAwokens": [
+                            "スキル遲延耐性",
+                            "スキル遲延耐性",
+                            "スキル遲延耐性",
+                            "スキル遲延耐性",
+                            "スキル遲延耐性",
+                            "スキル遲延耐性"
+                        ],
+                        "plus": {
+                            "hp": 99,
+                            "attack": 99,
+                            "heal": 99
+                        }
+                    },
+                    "inheritId": 5632
+                }
+            ],
+            "reference": "https://www.youtube.com/watch?v=2LPhWB5JD4c"
+        }
+    ],
+    "裏魔門の守護者":[
+        {
+            "team": [
+                {
+                    "selfId": 6531,
+                    "selfConfig": {
+                        "awokenNum": 999,
+                        "superAwoken": "unknown",
+                        "lv": 99,
+                        "potentialAwokens": [
+                            "スキル遲延耐性",
+                            "スキル遲延耐性",
+                            "スキル遲延耐性",
+                            "スキル遲延耐性",
+                            "スキル遲延耐性",
+                            "スキル遲延耐性"
+                        ],
+                        "plus": {
+                            "hp": 99,
+                            "attack": 99,
+                            "heal": 99
+                        }
+                    },
+                    "inheritId": 5065,
+                    "inheritConfig": {
+                        "lv": 99,
+                        "plus": {
+                            "hp": 99,
+                            "attack": 99,
+                            "heal": 99
+                        }
+                    }
+                },
+                {
+                    "selfId": 6353,
+                    "selfConfig": {
+                        "awokenNum": 999,
+                        "superAwoken": "スキルブースト＋",
+                        "lv": 110,
+                        "potentialAwokens": [
+                            "毒目覚め耐性",
+                            "スキル遲延耐性",
+                            "スキル遲延耐性"
+                        ],
+                        "plus": {
+                            "hp": 99,
+                            "attack": 99,
+                            "heal": 99
+                        }
+                    },
+                    "inheritId": 6154,
+                    "inheritConfig": {
+                        "lv": 99,
+                        "plus": {
+                            "hp": 99,
+                            "attack": 99,
+                            "heal": 99
+                        }
+                    }
+                },
+                {
+                    "selfId": 6395,
+                    "selfConfig": {
+                        "awokenNum": 999,
+                        "superAwoken": "unknown",
+                        "lv": 99,
+                        "potentialAwokens": [
+                            "スキル遲延耐性",
+                            "スキル遲延耐性",
+                            "スキル遲延耐性",
+                            "スキル遲延耐性",
+                            "スキル遲延耐性",
+                            "スキル遲延耐性"
+                        ],
+                        "plus": {
+                            "hp": 99,
+                            "attack": 99,
+                            "heal": 99
+                        }
+                    },
+                    "inheritId": 6556,
+                    "inheritConfig": {
+                        "lv": 99,
+                        "plus": {
+                            "hp": 99,
+                            "attack": 99,
+                            "heal": 99
+                        }
+                    }
+                },
+                {
+                    "selfId": 6540,
+                    "selfConfig": {
+                        "awokenNum": 999,
+                        "superAwoken": "unknown",
+                        "lv": 99,
+                        "potentialAwokens": [
+                            "スキル遲延耐性",
+                            "スキル遲延耐性",
+                            "スキル遲延耐性",
+                            "スキル遲延耐性",
+                            "スキル遲延耐性",
+                            "スキル遲延耐性"
+                        ],
+                        "plus": {
+                            "hp": 99,
+                            "attack": 99,
+                            "heal": 99
+                        }
+                    },
+                    "inheritId": 5875
+                },
+                {
+                    "selfId": 6557,
+                    "selfConfig": {
+                        "awokenNum": 999,
+                        "superAwoken": "バインド耐性＋",
+                        "lv": 99,
+                        "potentialAwokens": [
+                            "スキル遲延耐性",
+                            "スキル遲延耐性",
+                            "スキル遲延耐性",
+                            "スキル遲延耐性",
+                            "スキル遲延耐性",
+                            "水ダメージ軽減"
+                        ],
+                        "plus": {
+                            "hp": 99,
+                            "attack": 99,
+                            "heal": 99
+                        }
+                    },
+                    "inheritId": 6532
+                },
+                {
+                    "selfId": 6531,
+                    "selfConfig": {
+                        "awokenNum": 999,
+                        "superAwoken": "unknown",
+                        "lv": 99,
+                        "potentialAwokens": [
+                            "スキル遲延耐性",
+                            "スキル遲延耐性",
+                            "スキル遲延耐性",
+                            "スキル遲延耐性",
+                            "スキル遲延耐性",
+                            "スキル遲延耐性"
+                        ],
+                        "plus": {
+                            "hp": 99,
+                            "attack": 99,
+                            "heal": 99
+                        }
+                    },
+                    "inheritId": 5065,
+                    "inheritConfig": {
+                        "lv": 99,
+                        "plus": {
+                            "hp": 99,
+                            "attack": 99,
+                            "heal": 99
+                        }
+                    }
+                }
+            ],
+            "reference": "https://www.youtube.com/watch?v=hyMJaYNL4Rg"
+        }
+    ]
+}

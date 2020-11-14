@@ -10,7 +10,7 @@ import imgPath from './data/imgPath.json';
 const useStyles = makeStyles((theme) => ({
   root: {
     alignItems: 'center',
-    width: 600,
+    width: '100%',
     padding: '10px 20px 60px 20px',
   },
   selfLeaderSkill: {

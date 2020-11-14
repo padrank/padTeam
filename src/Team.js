@@ -1,15 +1,16 @@
 import React from 'react';
 import TeamMember from './TeamMember';
-import { Grid, Paper, List, ListItem } from '@material-ui/core';
+import { Grid, Paper, List, ListItem, ListSubheader } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import TeamInfo from './TeamInfo';
-
+import { Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions, Button } from '@material-ui/core';
+import Search from './Search';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
     alignItems: 'center',
-    width: 600,
+    width: '100%',
     padding: '10px 20px 70px 20px',
   }
 }))
@@ -18,6 +19,7 @@ export default function Team(props) {
   const classes = useStyles();
 
   const [awokenSummary, setAwokenSummary] = React.useState({});
+  const [searchDialogOpen, setSearchDialogOpen] = React.useState(false);
 
   const handleTeamMemberClick = (i, selfSelected, inheritSelected) => {
     props.onChange(props.teamData.map((t, index) => {
@@ -35,7 +37,8 @@ export default function Team(props) {
       else {
         return t;
       }
-    }))
+    }));
+    setSearchDialogOpen(true);
   }
 
   const handleTeamMemberDrop = (i, isInherit, id, data) => {
@@ -105,14 +108,19 @@ export default function Team(props) {
   }
 
   return (
-    <List>
+    <List
+      subheader={
+        <ListSubheader component="div" id="search-result" disableSticky>
+          Team
+        </ListSubheader>
+    }>
       <ListItem>
         <Paper className={classes.root}>
-          <Grid container spacing={1}>
+          <Grid container spacing={0} direction="row" justify="center" alignItems="center">
             {
               props.teamData.map((d, i) => {
                 return (
-                  <Grid item xs>
+                  <Grid item xs sm md lg>
                     <TeamMember
                       data={d}
                       onClick={(selfSelected, inheritSelected) => handleTeamMemberClick(i, selfSelected, inheritSelected)}
@@ -130,6 +138,22 @@ export default function Team(props) {
       <ListItem>
         <TeamInfo data={props.teamData}/>
       </ListItem>
+      <Dialog
+        open={searchDialogOpen}
+        onClose={() => setSearchDialogOpen(false)}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle id="alert-dialog-title">{"Search"}</DialogTitle>
+        <DialogContent>
+          <Search teamData={props.teamData} onChange={props.onChange} />
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={() => setSearchDialogOpen(false)} color="primary" autoFocus>
+            OK
+          </Button>
+        </DialogActions>
+      </Dialog>
     </List>
   )
 }
